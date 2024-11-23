@@ -1,6 +1,6 @@
 {
-  "name": "@react-native-oh-tpl/datetimepicker",
-  "version": "7.6.2-0.1.1",
+  "name": "@react-native-ohos/datetimepicker",
+  "version": "7.6.2-rc.1",
   "description": "DateTimePicker component for React Native",
   "harmony": {
     "alias": "@react-native-community/datetimepicker"
@@ -40,7 +40,8 @@
     "detox:android:test:debug": "adb shell service call alarm 3 s16 Europe/Prague && detox test -c android.emu.debug -l verbose",
     "detox:android:build:release": "detox build -c android.emu.release",
     "detox:android:test:release": "adb shell service call alarm 3 s16 Europe/Prague && detox test -c android.emu.release --record-videos all --record-logs all --headless -l verbose",
-    "detox:clean": "rimraf example/android/build && rimraf example/android/app/build && rimraf example/android/.gradle && rimraf example/ios/build"
+    "detox:clean": "rimraf example/android/build && rimraf example/android/app/build && rimraf example/android/.gradle && rimraf example/ios/build",
+    "codegen-lib": "react-native codegen-lib-harmony --no-safety-check --npm-package-name datetimepicker --cpp-output-path ./harmony/datetimepicker/src/main/cpp/generated --ets-output-path ./harmony/datetimepicker/src/main/ets/generated --arkts-components-spec-paths ./src/specs/NativeComponentDateTimePicker.js"
   },
   "repository": {
     "type": "git",
@@ -90,7 +91,7 @@
     "react-native": "^0.72.7",
     "react-native-localize": "^3.0.3",
     "react-native-test-app": "^2.5.32",
-
+    "@rnoh/react-native-harmony-cli": "file:./rnoh-react-native-harmony-cli-0.0.27.tgz",
     "react-native-windows": "^0.71.3",
     "react-test-renderer": "18.2.0",
     "semantic-release": "^19.0.3"
